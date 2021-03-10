@@ -82,7 +82,7 @@ const CarteScreen = (props) => {
   );
 };
 
-CarteScreen.navigationOptions = {
+export const  screenOption = {
   headerTitle: "Cart screen",
 };
 

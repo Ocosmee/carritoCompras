@@ -14,7 +14,8 @@ const StartupScreen = (props) => {
             const userDta = await AsyncStorage.getItem('userData');
             
             if(!userDta){
-                props.navigation.navigate('Auth');
+                //props.navigation.navigate('Auth');
+                dispatch(authActions.setDidTryAL)
                 return;
             }
 
@@ -27,7 +28,7 @@ const StartupScreen = (props) => {
                 return;
             }
 
-            props.navigation.navigate('Shop');
+            //props.navigation.navigate('Shop');
             dispatch(authActions.authenticate(userId, token));
             
         }

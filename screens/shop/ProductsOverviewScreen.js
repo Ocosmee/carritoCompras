@@ -36,9 +36,9 @@ const ProductsOvervieScreen = (props) => {
   }, [dispatch, setIsLoading, setError]);
 
   useEffect(()=>{
-   const willFocusSub = props.navigation.addListener('willFocus', loadProducts);
+   const unsubscribe = props.navigation.addListener('focus', loadProducts);
     return ()=>{
-      willFocusSub.remove();
+      unsubscribe();
     }
   }, [loadProducts]);
 
@@ -120,7 +120,7 @@ const ProductsOvervieScreen = (props) => {
   );
 };
 
-ProductsOvervieScreen.navigationOptions = (navData) => {
+export const screenOption = (navData) => {
   return {
     headerTitle: "All prodcuts",
     headerLeft: () => (

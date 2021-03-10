@@ -11,7 +11,9 @@ import productsReducer from './storage/reducers/products';
 import cartReducer from './storage/reducers/cart';
 import ordersReducer from './storage/reducers/orders';
 import authReducer from './storage/reducers/auth';
-import ShopNavigator from './navigation/ShopNavigator';
+//import ShopNavigator from './navigation/ShopNavigator';
+import AppNavigator from './navigation/AppNavigator';
+
 
 // npm install --save expo-font
 const rootReducer = combineReducers({
@@ -45,7 +47,7 @@ export default function App() {
   
     return (
       <Provider store={store}>
-        <ShopNavigator/>
+        <AppNavigator/>
       </Provider>
     );
 }
